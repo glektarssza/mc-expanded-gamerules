@@ -42,15 +42,21 @@ jobs:
         with:
           name: dist-forge
           path: forge/build/libs/
+          compression-level: 0
+          if-no-files-found: error
       - id: upload-fabric-artifacts
         name: Upload Fabric artifacts
         uses: actions/upload-artifact@v4
         with:
           name: dist-fabric
           path: fabric/build/libs/
+          compression-level: 0
+          if-no-files-found: error
       - id: upload-neoforge-artifacts
         name: Upload NeoForge artifacts
         uses: actions/upload-artifact@v4
         with:
           name: dist-neoforge
           path: neoforge/build/libs/
+          compression-level: 0
+          if-no-files-found: error
