@@ -1,7 +1,7 @@
 package com.glektarssza.expandedgamerules.platform;
 
-import com.example.examplemod.Constants;
-import com.example.examplemod.platform.services.IPlatformHelper;
+import com.glektarssza.expandedgamerules.Constants;
+import com.glektarssza.expandedgamerules.platform.services.IPlatformHelper;
 
 import java.util.ServiceLoader;
 
