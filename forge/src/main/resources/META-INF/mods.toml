@@ -11,9 +11,9 @@ displayName = "${mod_name}"
 #updateJSONURL="https://change.me.example.invalid/updates.json"
 displayURL="https://modrinth.com/mod/expanded-gamerules"
 logoFile = "${mod_id}.png"
-credits = "${credits}"
+credits = "${mod_credits}"
 authors = "${mod_author}"
-description = '''${description}'''
+description = '''${mod_description}'''
 [[dependencies.${mod_id}]]
 modId = "forge"
 mandatory = true

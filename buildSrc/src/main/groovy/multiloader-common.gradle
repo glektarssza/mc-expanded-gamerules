@@ -81,7 +81,7 @@ jar {
 processResources {
     var expandProps = [
             'version'                      : version,
-            'group'                        : mod_group,
+            'mod_group'                    : mod_group,
             'minecraft_version'            : minecraft_version,
             'minecraft_version_range'      : minecraft_version_range,
             'fabric_version'               : fabric_version,
@@ -89,13 +89,13 @@ processResources {
             'mod_name'                     : mod_name,
             'mod_author'                   : mod_author,
             'mod_id'                       : mod_id,
-            'license'                      : mod_license,
-            'description'                  : mod_description,
+            'mod_license'                  : mod_license,
+            'mod_description'              : mod_description,
             'neoforge_version'             : neoforge_version,
             'neoforge_loader_version_range': neoforge_loader_version_range,
-            "forge_version"                : forge_version,
-            "forge_loader_version_range"   : forge_loader_version_range,
-            'credits'                      : mod_credits,
+            'forge_version'                : forge_version,
+            'forge_loader_version_range'   : forge_loader_version_range,
+            'mod_credits'                  : mod_credits,
             'java_version'                 : java_version
     ]
 
