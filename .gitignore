@@ -40,4 +40,5 @@ tags
 # Java #
 ## Gradle ##
 .gradle/
-*/build/
+build/
+.eclipse/
