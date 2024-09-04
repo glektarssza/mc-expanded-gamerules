@@ -47,5 +47,4 @@ rootProject.name = 'expandedgamerules'
 include('common')
 include('forge')
 include('fabric')
-// I'll deal with you later
-// include('neoforge')
+include('neoforge')
