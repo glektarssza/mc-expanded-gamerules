@@ -7,6 +7,7 @@ import org.slf4j.LoggerFactory;
  * A static utility class holding general constants for the mod.
  */
 public class Constants {
+
     /**
      * The unique identifier of the mod.
      */

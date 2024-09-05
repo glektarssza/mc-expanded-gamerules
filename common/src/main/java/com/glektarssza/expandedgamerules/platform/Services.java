@@ -1,13 +1,28 @@
 package com.glektarssza.expandedgamerules.platform;
 
+import java.util.ServiceLoader;
+
 import com.glektarssza.expandedgamerules.Constants;
 import com.glektarssza.expandedgamerules.platform.services.IPlatformHelper;
 
-import java.util.ServiceLoader;
-
+/**
+ * A static utility class holding general mod services.
+ */
 public class Services {
+
+    /**
+     * The platform helper service
+     */
     public static final IPlatformHelper PLATFORM = load(IPlatformHelper.class);
 
+    /**
+     * Load a service from the service loader.
+     *
+     * @param <T> The type of the service to load.
+     * @param clazz The class of the service to load.
+     *
+     * @return The loaded service.
+     */
     public static <T> T load(Class<T> clazz) {
         final T loadedService = ServiceLoader.load(clazz)
                 .findFirst()
