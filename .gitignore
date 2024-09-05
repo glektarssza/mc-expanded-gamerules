@@ -36,3 +36,11 @@ tags
 
 # Environment #
 .envrc
+
+# Java #
+## Gradle ##
+.eclipse/
+.gradle/
+bin/
+build/
+run/
