@@ -1,0 +1,14 @@
+disroot
+envrc
+factorypath
+forgejo
+gamerule
+gamerules
+glek
+glektarssza
+gradlew
+importorder
+modrinth
+netrwhist
+sessionx
+tarssza
