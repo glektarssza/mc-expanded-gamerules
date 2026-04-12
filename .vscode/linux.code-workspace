@@ -1,0 +1,19 @@
+{
+    "folders": [
+        {
+            "name": "Expanded Gamerules",
+            "path": ".."
+        }
+    ],
+    "settings": {
+        "cSpell.ignorePaths": [
+            "vscode-extension",
+            ".git/{info,lfs,logs,refs,objects}/**",
+            ".git/{index,*refs,*HEAD}",
+            ".vscode",
+            ".vscode-insiders",
+            "build",
+            "templates/vscode"
+        ]
+    }
+}
