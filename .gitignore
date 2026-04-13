@@ -69,6 +69,8 @@ user.properties
 bin/
 build/
 .gradle/
+.apt_generated/
+.apt_generated_*/
 
 # Debugging #
 ## Gradle ##
