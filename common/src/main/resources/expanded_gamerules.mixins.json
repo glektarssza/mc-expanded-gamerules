@@ -4,7 +4,7 @@
     "package": "${mixins_package}",
     "refmap": "${mod_id}.refmap.json",
     "compatibilityLevel": "JAVA_18",
-    "mixins": ["minecraft.world.entity"],
+    "mixins": ["minecraft.world.entity.LivingEntityMixin"],
     "client": [],
     "server": [],
     "injectors": {
