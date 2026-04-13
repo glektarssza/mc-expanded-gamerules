@@ -134,6 +134,7 @@ processResources {
         'neoforge_version'             : neoforge_version,
         'neoforge_version_range'       : neoforge_version_range,
         'neoforge_loader_version_range': neoforge_loader_version_range,
+        'neoforge_update_url'          : neoforge_update_url,
         'fabric_version'               : fabric_version,
         'fabric_loader_version'        : fabric_loader_version,
         'fabric_entrypoint'            : fabric_entrypoint
