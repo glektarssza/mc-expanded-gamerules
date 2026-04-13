@@ -1,22 +1,31 @@
 package com.glektarssza.expanded_gamerules;
 
-// import com.example.examplemod.platform.Services;
-// import net.minecraft.core.registries.BuiltInRegistries;
-// import net.minecraft.world.item.Items;
+// import com.glektarssza.expanded_gamerules.platform.Services;
+import net.minecraft.core.registries.BuiltInRegistries;
+import net.minecraft.world.item.Items;
 
 /**
  * The common class.
  *
- * @apiNote Provides logic common to startup and tear down between all mod
- * loaders.
+ * Provides logic common to startup and tear down between all mod loaders.
  */
-public class CommonClass {
+public final class CommonClass {
+    /**
+     * Create a new instance.
+     */
+    public CommonClass() {
+        // -- Does nothing
+    }
+
     /**
      * Initialize the shaded logic.
      */
     public static void init() {
-        // Constants.LOGGER.info("Hello from common initialization code for {}!", Services.PLATFORM.getPlatformName());
-        // Constants.LOGGER.info("We're currently running in a {} environment!", Services.PLATFORM.getEnvironmentName());
-        Constants.LOGGER.info("The ID for diamonds is {}", BuiltInRegistries.ITEM.getKey(Items.DIAMOND));
+        // Constants.ROOT_LOGGER.info("Hello from common initialization code for
+        // {}!", Services.PLATFORM.getPlatformName());
+        // Constants.ROOT_LOGGER.info("We're currently running in a {}
+        // environment!", Services.PLATFORM.getEnvironmentName());
+        Constants.ROOT_LOGGER.info("The ID for diamonds is {}",
+            BuiltInRegistries.ITEM.getKey(Items.DIAMOND));
     }
 }
