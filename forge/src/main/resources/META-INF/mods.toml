@@ -1,20 +1,19 @@
 modLoader = "javafml"
 loaderVersion = "${forge_loader_version_range}"
 license = "${mod_license}"
-issueTrackerURL="https://git.disroot.org/glektarssza-mc-modding/expanded-gamerules/issues"
-# Enable only if your mod is client-side only
-# clientSideOnly=true
+issueTrackerURL = "${mod_bug_tracker}"
+clientSideOnly = ${forge_client_side_only}
 [[mods]]
 modId = "${mod_id}"
 version = "${mod_version}"
 displayName = "${mod_name}"
-updateJSONURL="https://git.disroot.org/glektarssza-mc-modding/expanded-gamerules/raw/branch/main/updates.json"
-displayURL="https://git.disroot.org/glektarssza-mc-modding/expanded-gamerules"
+updateJSONURL = "${forge_update_url}"
+displayURL = "${mod_homepage}"
 logoFile = "${mod_id}.png"
 credits = "${mod_credits}"
 authors = "${mod_author}"
 description = '''${mod_description}'''
-[[dependencies.${mod_id}]
+[[dependencies.${mod_id}]]
 modId = "forge"
 mandatory = true
 versionRange = "${forge_version_range}"
