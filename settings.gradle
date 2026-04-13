@@ -45,7 +45,7 @@ plugins {
 }
 
 rootProject.name = "expanded-gamerules"
-// include('common')
-// include('fabric')
+include('common')
+include('forge')
 // include('neoforge')
-// include('forge')
+// include('fabric')
