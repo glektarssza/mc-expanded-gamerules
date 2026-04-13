@@ -1,7 +1,7 @@
 package com.glektarssza.expanded_gamerules.platform;
 
 import net.neoforged.fml.ModList;
-import net.neoforged.fml.loading.FMLLoader;
+import net.neoforged.fml.loading.FMLEnvironment;
 
 import com.glektarssza.expanded_gamerules.platform.services.IPlatformHelper;
 
@@ -9,6 +9,13 @@ import com.glektarssza.expanded_gamerules.platform.services.IPlatformHelper;
  * The platform helper for the NeoForge mod loader.
  */
 public class NeoForgePlatformHelper implements IPlatformHelper {
+    /**
+     * Create a new instance.
+     */
+    public NeoForgePlatformHelper() {
+        // -- Does nothing
+    }
+
     /**
      * {@inheritDoc}
      */
@@ -22,7 +29,7 @@ public class NeoForgePlatformHelper implements IPlatformHelper {
      */
     @Override
     public boolean isDevelopmentEnvironment() {
-        return !FMLLoader.getCurrent().isProduction();
+        return !FMLEnvironment.production;
     }
 
     /**
