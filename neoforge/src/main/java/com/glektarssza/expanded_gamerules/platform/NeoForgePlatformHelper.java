@@ -1,20 +1,20 @@
 package com.glektarssza.expanded_gamerules.platform;
 
-import net.minecraftforge.fml.ModList;
-import net.minecraftforge.fml.loading.FMLLoader;
+import net.neoforged.fml.ModList;
+import net.neoforged.fml.loading.FMLLoader;
 
 import com.glektarssza.expanded_gamerules.platform.services.IPlatformHelper;
 
 /**
- * The platform helper for the Forge mod loader.
+ * The platform helper for the NeoForge mod loader.
  */
-public class ForgePlatformHelper implements IPlatformHelper {
+public class NeoForgePlatformHelper implements IPlatformHelper {
     /**
      * {@inheritDoc}
      */
     @Override
     public String getPlatformName() {
-        return "Forge";
+        return "NeoForge";
     }
 
     /**
@@ -22,7 +22,7 @@ public class ForgePlatformHelper implements IPlatformHelper {
      */
     @Override
     public boolean isDevelopmentEnvironment() {
-        return !FMLLoader.isProduction();
+        return !FMLLoader.getCurrent().isProduction();
     }
 
     /**

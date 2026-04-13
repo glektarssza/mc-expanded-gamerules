@@ -13,7 +13,7 @@ repos:
       - id: check-merge-conflict
       - id: check-json
       - id: check-toml
-        exclude: forge/src/main/resources/META-INF/mods.toml
+        exclude: '.+/META-INF/[^/]+.mods.toml'
       - id: check-yaml
       - id: detect-private-key
       - id: end-of-file-fixer

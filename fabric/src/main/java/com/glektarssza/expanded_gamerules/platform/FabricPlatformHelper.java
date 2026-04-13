@@ -1,20 +1,19 @@
 package com.glektarssza.expanded_gamerules.platform;
 
-import net.minecraftforge.fml.ModList;
-import net.minecraftforge.fml.loading.FMLLoader;
+import net.fabricmc.loader.api.FabricLoader;
 
 import com.glektarssza.expanded_gamerules.platform.services.IPlatformHelper;
 
 /**
- * The platform helper for the Forge mod loader.
+ * The platform helper for the Fabric mod loader.
  */
-public class ForgePlatformHelper implements IPlatformHelper {
+public class FabricPlatformHelper implements IPlatformHelper {
     /**
      * {@inheritDoc}
      */
     @Override
     public String getPlatformName() {
-        return "Forge";
+        return "Fabric";
     }
 
     /**
@@ -22,7 +21,7 @@ public class ForgePlatformHelper implements IPlatformHelper {
      */
     @Override
     public boolean isDevelopmentEnvironment() {
-        return !FMLLoader.isProduction();
+        return FabricLoader.getInstance().isDevelopmentEnvironment();
     }
 
     /**
@@ -30,6 +29,6 @@ public class ForgePlatformHelper implements IPlatformHelper {
      */
     @Override
     public boolean isModLoaded(String modId) {
-        return ModList.get().isLoaded(modId);
+        return FabricLoader.getInstance().isModLoaded(modId);
     }
 }
