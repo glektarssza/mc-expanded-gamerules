@@ -1,8 +1,9 @@
 plugins {
-    id 'multiloader-loader'
-    id 'fabric-loom'
-    id 'eclipse'
-    id 'idea'
+    id('multiloader-loader')
+    id('fabric-loom')
+    id('com.diffplug.spotless')
+    id('eclipse')
+    id('idea')
 }
 dependencies {
     minecraft "com.mojang:minecraft:${minecraft_version}"

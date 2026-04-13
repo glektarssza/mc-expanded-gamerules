@@ -1,4 +1,5 @@
 accesstransformer
+diffplug
 disroot
 envrc
 fabricmc

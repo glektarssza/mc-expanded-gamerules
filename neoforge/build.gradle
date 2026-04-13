@@ -1,8 +1,9 @@
 plugins {
-    id 'multiloader-loader'
-    id 'net.neoforged.moddev'
-    id 'eclipse'
-    id 'idea'
+    id('multiloader-loader')
+    id('net.neoforged.moddev')
+    id('com.diffplug.spotless')
+    id('eclipse')
+    id('idea')
 }
 
 neoForge {
