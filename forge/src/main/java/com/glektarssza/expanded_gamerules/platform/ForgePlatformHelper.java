@@ -6,22 +6,18 @@ import net.minecraftforge.fml.loading.FMLLoader;
 import com.glektarssza.expanded_gamerules.platform.services.IPlatformHelper;
 
 public class ForgePlatformHelper implements IPlatformHelper {
-
     @Override
     public String getPlatformName() {
-
         return "Forge";
     }
 
     @Override
-    public boolean isModLoaded(String modId) {
-
-        return ModList.get().isLoaded(modId);
+    public boolean isDevelopmentEnvironment() {
+        return !FMLLoader.isProduction();
     }
 
     @Override
-    public boolean isDevelopmentEnvironment() {
-
-        return !FMLLoader.isProduction();
+    public boolean isModLoaded(String modId) {
+        return ModList.get().isLoaded(modId);
     }
 }

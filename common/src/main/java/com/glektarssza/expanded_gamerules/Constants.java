@@ -9,13 +9,6 @@ import org.slf4j.LoggerFactory;
  */
 public final class Constants {
     /**
-     * Create a new instance.
-     */
-    public Constants() {
-        // -- Does nothing
-    }
-
-    /**
      * The mod ID.
      */
     @NotNull
@@ -32,4 +25,11 @@ public final class Constants {
      */
     @NotNull
     public static final Logger ROOT_LOGGER = LoggerFactory.getLogger(MOD_NAME);
+
+    /**
+     * Create a new instance.
+     */
+    public Constants() {
+        // -- Does nothing
+    }
 }

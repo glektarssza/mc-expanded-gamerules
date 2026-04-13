@@ -12,13 +12,6 @@ import com.glektarssza.expanded_gamerules.platform.services.IPlatformHelper;
  */
 public final class Services {
     /**
-     * Create a new instance.
-     */
-    public Services() {
-        // -- Does nothing
-    }
-
-    /**
      * The platform service.
      */
     @NotNull
@@ -41,5 +34,12 @@ public final class Services {
         Constants.ROOT_LOGGER.debug("Loaded instance {} for service {}",
             loadedService, clazz);
         return loadedService;
+    }
+
+    /**
+     * Create a new instance.
+     */
+    public Services() {
+        // -- Does nothing
     }
 }
