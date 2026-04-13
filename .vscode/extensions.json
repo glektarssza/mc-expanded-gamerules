@@ -1,3 +1,16 @@
 {
-    "recommendations": ["editorconfig.editorconfig"]
+    "recommendations": [
+        "editorconfig.editorconfig",
+        "maxking.forgejo-vscode",
+        "redhat.java",
+        "vscjava.vscode-java-debug",
+        "vscjava.vscode-java-dependency",
+        "vscjava.vscode-gradle",
+        "vscjava.vscode-java-test"
+    ],
+    "unwantedRecommendations": [
+        "vscjava.vscode-java-pack",
+        "shengchen.vscode-checkstyle",
+        "vscjava.vscode-maven"
+    ]
 }
