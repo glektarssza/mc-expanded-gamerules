@@ -1,0 +1,136 @@
+plugins {
+    id 'java-library'
+    id 'maven-publish'
+}
+
+base {
+    archivesName = "${mod_id}-${mod_name}-${minecraft_version}"
+}
+
+java {
+    toolchain.languageVersion = JavaLanguageVersion.of(java_version)
+    withSourcesJar()
+    withJavadocJar()
+}
+
+repositories {
+    mavenCentral()
+    exclusiveContent {
+        forRepository {
+            maven {
+                name = 'Sponge'
+                url = 'https://repo.spongepowered.org/repository/maven-public'
+            }
+        }
+        filter {
+            includeGroupAndSubgroups('org.spongepowered')
+        }
+    }
+    exclusiveContent {
+        forRepositories(
+                maven {
+                    name = 'ParchmentMC'
+                    url = 'https://maven.parchmentmc.org/'
+                },
+                maven {
+                    name = "NeoForge"
+                    url = 'https://maven.neoforged.net/releases'
+                }
+        )
+        filter {
+            includeGroup('org.parchmentmc.data')
+        }
+    }
+    maven {
+        name = 'BlameJared'
+        url = 'https://maven.blamejared.com'
+    }
+}
+
+['apiElements', 'runtimeElements', 'sourcesElements', 'javadocElements'].each {
+    variant -> {
+        configurations."$variant".outgoing {
+            capability("$mod_group:${mod_name}:$mod_version")
+            capability("$mod_group:${base.archivesName.get()}:$mod_version")
+            capability("$mod_group:$mod_id-${mod_name}-${minecraft_version}:$mod_version")
+            capability("$mod_group:$mod_id:$mod_version")
+        }
+        publishing.publications.configureEach {
+            suppressPomMetadataWarningsFor(variant)
+        }
+    }
+}
+
+jar {
+    manifest {
+        attributes([
+            'Specification-Title'   : mod_name,
+            'Specification-Vendor'  : mod_author,
+            'Specification-Version' : project.jar.archiveVersion,
+            'Implementation-Title'  : mod_name,
+            'Implementation-Version': project.jar.archiveVersion,
+            'Implementation-Vendor' : mod_author,
+            'Built-On-Minecraft'    : minecraft_version
+        ])
+    }
+}
+
+processResources {
+    var expandProps = [
+        'mod_name'               : mod_name,
+        'mod_id'                 : mod_id,
+        'mod_group'              : mod_group,
+        'mod_version'            : mod_version,
+        'mod_author'             : mod_author,
+        'mod_description'        : mod_description,
+        'mod_license'            : mod_license,
+        'mod_credits'            : mod_credits,
+        'minecraft_version'      : minecraft_version,
+        'minecraft_version_range': minecraft_version_range,
+        'java_version'           : java_version,
+        'forge_version'          : forge_version,
+        'forge_version_range'    : forge_version_range,
+        'neoforge_version'       : neoforge_version,
+        'neoforge_version_range' : neoforge_version_range,
+        'fabric_version'         : fabric_version,
+        'fabric_loader_version'  : fabric_loader_version
+    ]
+
+    var jsonExpandProps = expandProps.collectEntries {
+        key, value -> {
+            var result = value
+            if (!(result instanceof String)) {
+                return result
+            }
+            result = result.replace("\n", "\\\\n")
+            if (result.startsWith('"') && result.endsWith('"')) {
+                result = result.substring(1, result.length - 1)
+            }
+            return result
+        }
+    }
+
+    filesMatching(['META-INF/mods.toml', 'META-INF/neoforge.mods.toml']) {
+        expand expandProps
+    }
+
+    filesMatching(['pack.mcmeta', 'fabric.mod.json', '*.mixins.json']) {
+        expand jsonExpandProps
+    }
+
+    inputs.properties(expandProps)
+}
+
+publishing {
+    publications {
+        register('mavenJava', MavenPublication) {
+            artifactId base.archivesName.get()
+            from components.java
+        }
+    }
+    repositories {
+        maven {
+            url System.getenv('local_maven_url')
+        }
+    }
+}
