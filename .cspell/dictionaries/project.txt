@@ -20,6 +20,7 @@ minecraftforge
 mixinextras
 moddev
 modrinth
+mojang
 multiloader
 neoforge
 neoforged
