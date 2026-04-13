@@ -47,21 +47,25 @@ repositories {
     }
 }
 
-['apiElements', 'runtimeElements', 'sourcesElements', 'javadocElements'].each {
-    variant -> {
-        configurations."$variant".outgoing {
-            capability("$mod_group:${project.name}:$mod_version")
-            capability("$mod_group:${base.archivesName.get()}:$mod_version")
-            capability("$mod_group:$mod_id-${project.name}-${minecraft_version}:$mod_version")
-            capability("$mod_group:$mod_id:$mod_version")
-        }
-        publishing.publications.configureEach {
-            suppressPomMetadataWarningsFor(variant)
-        }
+['apiElements', 'runtimeElements', 'sourcesElements', 'javadocElements'].each {variant ->
+    configurations."$variant".outgoing {
+        capability("$mod_group:${project.name}:$mod_version")
+        capability("$mod_group:${base.archivesName.get()}:$mod_version")
+        capability("$mod_group:$mod_id-${project.name}-${minecraft_version}:$mod_version")
+        capability("$mod_group:$mod_id:$mod_version")
+    }
+    publishing.publications.configureEach {
+        suppressPomMetadataWarningsFor(variant)
     }
 }
 
+sourcesJar {
+    from(rootProject.file('LICENSE.md'))
+}
+
 jar {
+    from(rootProject.file('LICENSE.md'))
+
     manifest {
         attributes([
             'Specification-Title'   : mod_name,
@@ -76,7 +80,7 @@ jar {
 }
 
 processResources {
-    var expandProps = [
+    def expandProps = [
         'mod_name'               : mod_name,
         'mod_id'                 : mod_id,
         'mod_group'              : mod_group,
@@ -96,18 +100,16 @@ processResources {
         'fabric_loader_version'  : fabric_loader_version
     ]
 
-    var jsonExpandProps = expandProps.collectEntries {
-        key, value -> {
-            var result = value
-            if (!(result instanceof String)) {
-                return result
-            }
-            result = result.replace("\n", "\\\\n")
-            if (result.startsWith('"') && result.endsWith('"')) {
-                result = result.substring(1, result.length - 1)
-            }
+    var jsonExpandProps = expandProps.collectEntries {key, value ->
+        def result = value
+        if (!(result instanceof String)) {
             return result
         }
+        result = result.replace("\n", "\\\\n")
+        if (result.startsWith('"') && result.endsWith('"')) {
+            result = result.substring(1, result.length() - 1)
+        }
+        return [key: key, value: result]
     }
 
     filesMatching(['META-INF/mods.toml', 'META-INF/neoforge.mods.toml']) {
