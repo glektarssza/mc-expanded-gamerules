@@ -4,9 +4,11 @@
     "version": "${mod_version}",
     "name": "${mod_name}",
     "description": "${mod_description}",
-    "authors": ["${mod_author}"],
+    "authors": ["${mod_author_name} <${mod_author_email}>"],
     "contact": {
         "homepage": "${mod_homepage}",
+        "issues": "${mod_bug_tracker}",
+        "email": "${mod_author_email}",
         "sources": "${mod_source}"
     },
     "license": "${mod_license}",

@@ -99,11 +99,11 @@ jar {
     manifest {
         attributes([
             'Specification-Title'   : mod_name,
-            'Specification-Vendor'  : mod_author,
+            'Specification-Vendor'  : mod_author_name,
             'Specification-Version' : project.jar.archiveVersion,
             'Implementation-Title'  : project.name,
             'Implementation-Version': project.jar.archiveVersion,
-            'Implementation-Vendor' : mod_author,
+            'Implementation-Vendor' : mod_author_name,
             'Built-On-Minecraft'    : minecraft_version
         ])
     }
@@ -115,7 +115,8 @@ processResources {
         'mod_id'                       : mod_id,
         'mod_group'                    : mod_group,
         'mod_version'                  : mod_version,
-        'mod_author'                   : mod_author,
+        'mod_author_name'              : mod_author_name,
+        'mod_author_email'             : mod_author_email,
         'mod_description'              : mod_description,
         'mod_license'                  : mod_license,
         'mod_credits'                  : mod_credits,

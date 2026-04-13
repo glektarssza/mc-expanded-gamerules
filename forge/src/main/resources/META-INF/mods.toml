@@ -11,7 +11,7 @@ updateJSONURL = "${forge_update_url}"
 displayURL = "${mod_homepage}"
 logoFile = "${mod_id}.png"
 credits = "${mod_credits}"
-authors = "${mod_author}"
+authors = "${mod_author_name} <${mod_author_email}>"
 description = '''${mod_description}'''
 [[dependencies.${mod_id}]]
 modId = "forge"
