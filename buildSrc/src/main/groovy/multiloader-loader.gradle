@@ -14,7 +14,7 @@ configurations {
 dependencies {
     compileOnly(project(':common')) {
         capabilities {
-            requireCapability "$group:$mod_id"
+            requireCapability "$mod_group:$mod_id"
         }
         def loaderAttribute = Attribute.of('io.github.mcgradleconventions.loader', String)
         attributes {
