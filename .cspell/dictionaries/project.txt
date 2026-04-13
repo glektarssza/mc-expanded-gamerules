@@ -1,3 +1,4 @@
+accesstransformer
 disroot
 envrc
 fabricmc
@@ -12,9 +13,11 @@ glektarssza
 gradlew
 importorder
 jvmargs
+llamalad
 mcgradleconventions
 mcmeta
 minecraftforge
+mixinextras
 moddev
 modrinth
 multiloader
@@ -23,6 +26,7 @@ neoforged
 neoform
 netrwhist
 parchmentmc
+reobf
 sessionx
 spongepowered
 tarssza
