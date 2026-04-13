@@ -1,8 +1,6 @@
 package com.glektarssza.expanded_gamerules;
 
-// import com.glektarssza.expanded_gamerules.platform.Services;
-import net.minecraft.core.registries.BuiltInRegistries;
-import net.minecraft.world.item.Items;
+import com.glektarssza.expanded_gamerules.platform.Services;
 
 import com.glektarssza.expanded_gamerules.platform.Services;
 
@@ -22,8 +20,6 @@ public final class CommonClass {
         Constants.ROOT_LOGGER.info(
             "We're currently running in a {} environment!",
             Services.PLATFORM.getEnvironmentName());
-        Constants.ROOT_LOGGER.info("The ID for diamonds is {}",
-            BuiltInRegistries.ITEM.getKey(Items.DIAMOND));
     }
 
     /**
