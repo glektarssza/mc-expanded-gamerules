@@ -29,4 +29,4 @@ repos:
     rev: v1.1.0
     hooks:
       - id: gradle-wrapper-spotless
-        entry: zsh -ic './gradlew spotlessCheck'
+        entry: sh -c '${SHELL} -ic "./gradlew spotlessCheck"'
