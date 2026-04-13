@@ -50,9 +50,9 @@ repositories {
 ['apiElements', 'runtimeElements', 'sourcesElements', 'javadocElements'].each {
     variant -> {
         configurations."$variant".outgoing {
-            capability("$mod_group:${mod_name}:$mod_version")
+            capability("$mod_group:${project.name}:$mod_version")
             capability("$mod_group:${base.archivesName.get()}:$mod_version")
-            capability("$mod_group:$mod_id-${mod_name}-${minecraft_version}:$mod_version")
+            capability("$mod_group:$mod_id-${project.name}-${minecraft_version}:$mod_version")
             capability("$mod_group:$mod_id:$mod_version")
         }
         publishing.publications.configureEach {
