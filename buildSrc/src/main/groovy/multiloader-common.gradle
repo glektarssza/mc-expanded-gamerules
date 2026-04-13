@@ -109,7 +109,7 @@ processResources {
         if (result.startsWith('"') && result.endsWith('"')) {
             result = result.substring(1, result.length() - 1)
         }
-        return [key: key, value: result]
+        return [(key): result]
     }
 
     filesMatching(['META-INF/mods.toml', 'META-INF/neoforge.mods.toml']) {
