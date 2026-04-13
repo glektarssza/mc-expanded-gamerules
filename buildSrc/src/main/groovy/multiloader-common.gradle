@@ -81,23 +81,25 @@ jar {
 
 processResources {
     def expandProps = [
-        'mod_name'               : mod_name,
-        'mod_id'                 : mod_id,
-        'mod_group'              : mod_group,
-        'mod_version'            : mod_version,
-        'mod_author'             : mod_author,
-        'mod_description'        : mod_description,
-        'mod_license'            : mod_license,
-        'mod_credits'            : mod_credits,
-        'minecraft_version'      : minecraft_version,
-        'minecraft_version_range': minecraft_version_range,
-        'java_version'           : java_version,
-        'forge_version'          : forge_version,
-        'forge_version_range'    : forge_version_range,
-        'neoforge_version'       : neoforge_version,
-        'neoforge_version_range' : neoforge_version_range,
-        'fabric_version'         : fabric_version,
-        'fabric_loader_version'  : fabric_loader_version
+        'mod_name'                  : mod_name,
+        'mod_id'                    : mod_id,
+        'mod_group'                 : mod_group,
+        'mod_version'               : mod_version,
+        'mod_author'                : mod_author,
+        'mod_description'           : mod_description,
+        'mod_license'               : mod_license,
+        'mod_credits'               : mod_credits,
+        'mixins_package'            : mixins_package,
+        'minecraft_version'         : minecraft_version,
+        'minecraft_version_range'   : minecraft_version_range,
+        'java_version'              : java_version,
+        'forge_version'             : forge_version,
+        'forge_version_range'       : forge_version_range,
+        'forge_loader_version_range': forge_loader_version_range,
+        'neoforge_version'          : neoforge_version,
+        'neoforge_version_range'    : neoforge_version_range,
+        'fabric_version'            : fabric_version,
+        'fabric_loader_version'     : fabric_loader_version
     ]
 
     var jsonExpandProps = expandProps.collectEntries {key, value ->
