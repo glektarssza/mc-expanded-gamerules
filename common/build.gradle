@@ -1,6 +1,8 @@
 plugins {
     id 'multiloader-common'
     id 'net.neoforged.moddev'
+    id 'eclipse'
+    id 'idea'
 }
 
 neoForge {
