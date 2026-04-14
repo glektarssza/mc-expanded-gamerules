@@ -1,5 +1,7 @@
 package com.glektarssza.expanded_gamerules.platform;
 
+import org.jetbrains.annotations.NotNull;
+
 import net.minecraftforge.fml.ModList;
 import net.minecraftforge.fml.loading.FMLLoader;
 
@@ -13,6 +15,7 @@ public class ForgePlatformHelper implements IPlatformHelper {
      * {@inheritDoc}
      */
     @Override
+    @NotNull
     public String getPlatformName() {
         return "Forge";
     }

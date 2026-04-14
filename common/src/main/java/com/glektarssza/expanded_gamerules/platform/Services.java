@@ -6,6 +6,7 @@ import org.jetbrains.annotations.NotNull;
 
 import com.glektarssza.expanded_gamerules.Constants;
 import com.glektarssza.expanded_gamerules.platform.services.IPlatformHelper;
+import com.glektarssza.expanded_gamerules.utils.TypeUtilities;
 
 /**
  * A class that provides a way to access services.
@@ -33,7 +34,7 @@ public final class Services {
                 "Failed to load service for class " + clazz.getName()));
         Constants.ROOT_LOGGER.debug("Loaded instance {} for service {}",
             loadedService, clazz);
-        return loadedService;
+        return TypeUtilities.castAsNotNull(loadedService);
     }
 
     /**

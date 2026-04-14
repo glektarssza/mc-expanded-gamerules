@@ -1,5 +1,7 @@
 package com.glektarssza.expanded_gamerules.platform;
 
+import org.jetbrains.annotations.NotNull;
+
 import net.neoforged.fml.ModList;
 import net.neoforged.fml.loading.FMLEnvironment;
 
@@ -20,6 +22,7 @@ public class NeoForgePlatformHelper implements IPlatformHelper {
      * {@inheritDoc}
      */
     @Override
+    @NotNull
     public String getPlatformName() {
         return "NeoForge";
     }

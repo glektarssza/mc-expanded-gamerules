@@ -1,5 +1,7 @@
 package com.glektarssza.expanded_gamerules.platform;
 
+import org.jetbrains.annotations.NotNull;
+
 import net.fabricmc.loader.api.FabricLoader;
 
 import com.glektarssza.expanded_gamerules.platform.services.IPlatformHelper;
@@ -12,6 +14,7 @@ public class FabricPlatformHelper implements IPlatformHelper {
      * {@inheritDoc}
      */
     @Override
+    @NotNull
     public String getPlatformName() {
         return "Fabric";
     }

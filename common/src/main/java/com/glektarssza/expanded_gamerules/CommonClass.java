@@ -2,8 +2,6 @@ package com.glektarssza.expanded_gamerules;
 
 import com.glektarssza.expanded_gamerules.platform.Services;
 
-import com.glektarssza.expanded_gamerules.platform.Services;
-
 /**
  * The common class.
  *
