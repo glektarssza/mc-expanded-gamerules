@@ -23,4 +23,11 @@ public final class TypeUtilities {
         }
         return value;
     }
+
+    /**
+     * Create a new instance.
+     */
+    public TypeUtilities() {
+        // -- Do nothing
+    }
 }

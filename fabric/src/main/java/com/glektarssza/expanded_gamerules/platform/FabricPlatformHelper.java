@@ -11,6 +11,13 @@ import com.glektarssza.expanded_gamerules.platform.services.IPlatformHelper;
  */
 public class FabricPlatformHelper implements IPlatformHelper {
     /**
+     * Create a new instance.
+     */
+    public FabricPlatformHelper() {
+        // -- Do nothing
+    }
+
+    /**
      * {@inheritDoc}
      */
     @Override

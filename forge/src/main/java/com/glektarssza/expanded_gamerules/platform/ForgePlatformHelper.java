@@ -12,6 +12,13 @@ import com.glektarssza.expanded_gamerules.platform.services.IPlatformHelper;
  */
 public class ForgePlatformHelper implements IPlatformHelper {
     /**
+     * Create a new instance.
+     */
+    public ForgePlatformHelper() {
+        // -- Do nothing
+    }
+
+    /**
      * {@inheritDoc}
      */
     @Override

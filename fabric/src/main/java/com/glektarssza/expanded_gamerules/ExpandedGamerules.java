@@ -7,6 +7,13 @@ import net.fabricmc.api.ModInitializer;
  */
 public class ExpandedGamerules implements ModInitializer {
     /**
+     * Create a new instance.
+     */
+    public ExpandedGamerules() {
+        // -- Do nothing
+    }
+
+    /**
      * The initialization handler callback.
      */
     @Override
