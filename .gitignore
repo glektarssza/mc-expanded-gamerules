@@ -81,3 +81,6 @@ bin/
 
 ## Fabric ##
 *.launch
+
+## NeoForge ##
+neoforge/.eclipse/
